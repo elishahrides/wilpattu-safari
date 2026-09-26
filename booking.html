@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book Safari | Wilpattu Safari</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-nav"><div class="container nav-inner"><a class="brand" href="index.html"><img src="assets/elishah-rides-logo-transparent.png"></a><button class="menu">☰</button><nav class="nav-links"><a href="index.html">Home</a><a href="packages.html">Packages</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a class="nav-cta" href="booking.html">Book Safari</a></nav></div></header><main><section class="section" style="padding-top:170px"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Private safari booking</div><h1>Your day<br>in the wild.</h1></div><p>Choose your package, passenger count and date. Your total updates instantly from the per-person price.</p></div><div class="booking-shell"><div class="booking-grid"><div class="booking-copy"><div class="eyebrow">Complete your booking request</div><h2 style="margin-top:15px">A safari built around your group.</h2><div class="gold-line"></div><p style="color:#c7c4ba;line-height:1.8">Hotel pickup and drop-off are included around Anuradhapura. If you are staying elsewhere, enter your pickup location and we will confirm any additional transfer charge based on distance.</p><div class="facts"><div class="fact"><strong>1–12</strong><span>passengers supported</span></div><div class="fact"><strong>Clear</strong><span>simple live total</span></div><div class="fact"><strong>Snack</strong><span>included on every package</span></div></div></div><form class="booking-form" data-booking-form><div class="form-row"><div class="field"><label>Safari package</label><select name="experience" data-price-type required><option value="morning">Half-Safari Morning</option><option value="evening">Half-Safari Evening</option><option value="full">Full Day Safari</option></select></div><div class="field"><label>Passengers</label><select name="guests" data-passengers required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></div></div><div class="price-summary" aria-live="polite">
+  <div class="price-summary-head"><span>YOUR SAFARI PRICE</span><small>Updates automatically</small></div>
+  <div class="price-summary-grid">
+    <div class="price-box"><span>Per person</span><strong data-pp>$150 / person</strong><small>Based on package + group size</small></div>
+    <div class="price-box total"><span>Full group total</span><strong data-total>$150</strong><small><span data-rate-label>1 passenger · Half-Safari Morning</span></small></div>
+  </div>
+</div><div class="form-row"><div class="field"><label>Safari date</label><input name="safari_date" type="date" required></div><div class="field"><label>Pickup location</label><input name="pickup" required placeholder="Hotel / Anuradhapura area"></div></div><div class="field"><label>Destination / transfer location</label><input name="destination" placeholder="Anuradhapura / outside area"></div><div class="form-row"><div class="field"><label>Full name</label><input name="customer_name" required></div><div class="field"><label>WhatsApp</label><input name="whatsapp" required placeholder="+94..."></div></div><div class="field"><label>Email</label><input name="email" type="email" placeholder="Optional"></div><div class="field"><label>Notes</label><textarea name="notes" rows="4" placeholder="Anything we should know?"></textarea></div><button class="btn gold" type="submit" style="width:100%">Send booking request →</button><div class="form-msg note" style="margin-top:12px"></div><p class="note">Outside-Anuradhapura transfers may carry an additional distance-based charge. We will confirm it with you before final confirmation.</p></form></div></div></div></section></main><footer class="footer footer-luxury">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="assets/elishah-rides-logo-transparent.png" alt="Elishah Rides">
+        <div class="footer-kicker">WILPATTU SAFARI</div>
+        <p>Private wildlife experiences through the landscapes of Wilpattu National Park.</p>
+        <div class="footer-tagline">Powered by Elishah Rides.</div>
+      </div>
+      <div class="footer-col">
+        <b>Explore</b>
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="about.html">About Wilpattu</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div class="footer-col">
+        <b>Safari</b>
+        <a href="booking.html">Book a Safari</a>
+        <a href="packages.html">Morning Safari</a>
+        <a href="packages.html">Evening Safari</a>
+        <a href="packages.html">Full Day Safari</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <b>Contact</b>
+        <a href="tel:+94704658975"><span class="footer-mini-icon">☎</span> +94 70 465 8975</a>
+        <a href="https://wa.me/94704658975" target="_blank" rel="noopener"><span class="footer-mini-icon">◉</span> WhatsApp</a>
+        <a href="https://www.facebook.com/share/19cE3Pi6Ga/" target="_blank" rel="noopener"><span class="footer-mini-icon">f</span> Facebook</a>
+        <a href="https://youtube.com/@elishahrides?si=WaQpn66Vf2SiPHl1" target="_blank" rel="noopener"><span class="footer-mini-icon">▶</span> YouTube</a>
+      </div>
+    </div>
+    <div class="footer-cta">
+      <div><span class="eyebrow">YOUR WILPATTU MOMENT</span><strong>Ready to enter the wild?</strong></div>
+      <a class="btn gold" href="booking.html">Book Your Safari <span>→</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Elishah Rides. All rights reserved.</span>
+      <span>Wilpattu Safari · Sri Lanka</span>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="script.js"></script><script>const q=new URLSearchParams(location.search);if(q.get('package')){document.querySelector('[data-price-type]').value=q.get('package');document.querySelector('[data-passengers]').value=q.get('passengers')||1;updatePricing(document.querySelector('[data-booking-form]'))}</script></body></html>
