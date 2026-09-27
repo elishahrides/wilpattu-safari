@@ -1,7 +1,7 @@
-const SB_URL='https://pdjkssvcbgftjwyvxxyb.supabase.co';
-const SB_KEY='sb_publishable_ZvQWPW7q9wSkHdFMK8PcDQ_0lFunyAd';
+const SB_URL=String(window.WILPATTU_SUPABASE_URL||'').replace(/\/+$/,'');
+const SB_KEY=window.WILPATTU_SUPABASE_ANON_KEY||'';
 let sb=null;
-if(window.supabase?.createClient){sb=window.supabase.createClient(SB_URL,SB_KEY)}
+if(window.supabase?.createClient && SB_URL && SB_KEY){sb=window.supabase.createClient(SB_URL,SB_KEY)}
 
 const rates={morning:[150,120,100,90,85,80,90,85,80,80,80,80],evening:[150,120,100,90,85,80,90,85,80,80,80,80],full:[220,150,130,120,105,95,120,115,110,100,100,100]};
 const labels={morning:'Half-Safari Morning',evening:'Half-Safari Evening',full:'Full Day Safari'};
