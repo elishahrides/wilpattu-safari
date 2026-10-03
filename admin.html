@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard | Wilpattu Safari</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.admin-page{min-height:100vh;padding:130px 0 70px;background:radial-gradient(circle at 20% 0%,rgba(214,174,72,.08),transparent 35%),#070907}
+.admin-wrap{max-width:1200px;margin:auto}.admin-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:28px}.admin-head h1{font-size:clamp(38px,5vw,64px);margin:8px 0}.admin-card{background:rgba(18,22,18,.88);border:1px solid rgba(241,212,122,.14);border-radius:20px;padding:24px;box-shadow:0 25px 70px rgba(0,0,0,.28)}
+.admin-login{max-width:480px;margin:50px auto}.admin-login h2{font-size:34px;margin:10px 0}.admin-form{display:grid;gap:14px}.admin-form input{width:100%;background:#0c100d;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;color:#fff;outline:none}.admin-form label{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#bdb9ad}.admin-msg{margin-top:12px;line-height:1.6}.admin-error{color:#ff8d8d}.admin-success{color:#b8e8ad}
+.admin-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}.admin-toolbar select,.admin-toolbar button{background:#0d120e;color:#eee;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 12px}.booking-table-wrap{overflow:auto}.booking-table{width:100%;border-collapse:collapse;min-width:920px}.booking-table th,.booking-table td{text-align:left;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}.booking-table th{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#aaa69b}.booking-table td{font-size:13px;color:#dedbd2}.booking-table small{display:block;color:#99958b;margin-top:4px;line-height:1.5}.status{display:inline-flex;border-radius:999px;padding:6px 9px;font-size:10px;text-transform:uppercase;letter-spacing:1px;background:#1a201b}.status.pending{color:#f1d47a}.status.confirmed{color:#a9e59e}.status.cancelled{color:#ff9b9b}.status.completed{color:#b9d9ff}.status-select{background:#0b100c;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:7px}.empty{padding:45px 15px;text-align:center;color:#aaa69b}.new-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#f1d47a;box-shadow:0 0 12px rgba(241,212,122,.7);margin-right:7px}
+@media(max-width:700px){.admin-page{padding-top:110px}.admin-head{align-items:flex-start;flex-direction:column}.admin-card{padding:18px}.admin-head .btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="site-nav"><div class="container nav-inner"><a class="brand" href="index.html"><img src="assets/elishah-rides-logo-transparent.png" alt="Elishah Rides"></a><button class="menu">☰</button><nav class="nav-links"><a href="index.html">Home</a><a href="packages.html">Packages</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="booking.html">Book Safari</a></nav></div></header>
+<main class="admin-page"><div class="container admin-wrap">
+<section id="adminLogin" class="admin-card admin-login"><div class="eyebrow">Private area</div><h2>Safari Admin</h2><p class="note">Sign in with the Supabase admin account to view and manage booking requests.</p><form id="adminLoginForm" class="admin-form"><div><label>Email</label><input type="email" name="email" autocomplete="username" required></div><div><label>Password</label><input type="password" name="password" autocomplete="current-password" required></div><button class="btn gold" type="submit">Sign in →</button></form><div id="loginMsg" class="admin-msg"></div></section>
+<section id="adminDashboard" hidden>
+<div class="admin-head"><div><div class="eyebrow">Private dashboard</div><h1>Safari bookings</h1><p class="note" id="adminIdentity"></p></div><button class="btn" id="logoutBtn">Sign out</button></div>
+<div class="admin-card"><div class="admin-toolbar"><select id="statusFilter"><option value="all">All bookings</option><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select><button id="refreshBtn">Refresh</button><span class="note" id="bookingCount"></span></div><div class="booking-table-wrap"><table class="booking-table"><thead><tr><th>Booking</th><th>Safari</th><th>Guest</th><th>Contact</th><th>Pickup</th><th>Status</th><th>Created</th></tr></thead><tbody id="bookingRows"></tbody></table><div id="emptyBookings" class="empty" hidden>No booking requests yet.</div></div></div>
+</section>
+</div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="script.js"></script><script src="admin.js"></script>
+</body></html>

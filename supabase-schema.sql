@@ -38,3 +38,9 @@ drop policy if exists "Public can view traveller photos" on storage.objects;
 create policy "Public can view traveller photos" on storage.objects for select to anon,authenticated using (bucket_id='traveller-stories');
 
 -- Optional: if an older safari_bookings table already exists, no destructive changes are made.
+
+-- Admin dashboard access: authenticated Supabase users can read and update bookings.
+drop policy if exists "Authenticated admins can view safari bookings" on public.safari_bookings;
+create policy "Authenticated admins can view safari bookings" on public.safari_bookings for select to authenticated using (true);
+drop policy if exists "Authenticated admins can update safari bookings" on public.safari_bookings;
+create policy "Authenticated admins can update safari bookings" on public.safari_bookings for update to authenticated using (true) with check (true);
